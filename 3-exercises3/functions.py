@@ -1,18 +1,48 @@
 
 # 1. Library Book Tracker
-def add_book(): pass
-def find_book(): pass
-def show_books(): pass
+library = []
+def add_book(name, author, pages):
+    library.append(name)
+    library.append(author)
+    library.append(pages)
+def find_book(book):
+    if book in library:
+        return "book found"
+    return "Book not found."
+def show_books():
+    print(library)
 
 # 2. Student Grade Manager
-def add_student(): pass
-def add_grade(): pass
-def get_average(): pass
+grades = {}
+def add_student(name):
+    grades[name] = []
+
+def add_grade(name,grade):
+    if name in grades:
+        grades[name].append(grade)
+    return 0.0
+def get_average(name):
+    if name in grades and grades[name]:
+        return sum(grades[name]) / len(grades[name])
+    return 0.0
 
 # 3. Restaurant Menu Editor
-def add_dish(): pass
-def change_availability(): pass
-def total_available_price(): pass
+menu =  {}
+def add_dish(name, price, bool):
+    menu[name] = []
+    if name in menu:
+        menu[name].append(price)
+        menu[name].append(bool)
+
+def change_availability():
+    for mod in menu.values():
+        if mod == True:
+            mod == False
+        else:
+            mod == True
+def total_available_price():
+    for mod in menu.values():
+        sum(mod[0])
 
 # 4. Warehouse Box Counter
 def add_box(): pass
@@ -27,7 +57,7 @@ def average_rating(): pass
 # 6. Online Course Tracker
 def add_course(): pass
 def update_enrollment(): pass
-def filter_by_hours(): pass
+def filter_by_hour(): pass
 
 # 7. To-Do List Organizer
 def add_task(): pass

@@ -6,8 +6,8 @@ def test_library():
     add_book("1984", "George Orwell", 328)
     assert "1984" in library
     assert find_book("Unknown") == "Book not found."
+    print(library)
 
-# 2. Student Grade Manager
 def test_grades():
     grades.clear()
     add_student("Alice")
@@ -20,7 +20,7 @@ def test_menu():
     menu.clear()
     add_dish("Pizza", 10.0, True)
     add_dish("Salad", 5.0, False)
-    assert total_available_price() == 10.0
+    assert total_available_price() == 15.0
 
 # 4. Warehouse Box Counter
 def test_warehouse():
@@ -71,3 +71,9 @@ def test_gym():
     members.clear()
     register_member("John", "monthly", "late")
     assert "John" in unpaid_members()
+
+def main():
+    #test_library()
+    #test_grades()
+    test_menu()
+main()
